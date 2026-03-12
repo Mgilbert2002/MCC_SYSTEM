@@ -1,0 +1,297 @@
+.milk-tank-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin-top: -150px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.tank-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #3498db;
+}
+
+.tank-header h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.date-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.date-section label {
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.date-section input {
+  padding: 0.5rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.tank-visualization {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.tank-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tank {
+  width: 200px;
+  height: 300px;
+  border: 4px solid #2c3e50;
+  border-radius: 10px;
+  position: relative;
+  background: #f8f9fa;
+  overflow: hidden;
+}
+
+.milk-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease;
+  border-radius: 0 0 6px 6px;
+}
+
+.tank-labels {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #2c3e50;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.current-level {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.capacity {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.tank-info h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+.status-item label {
+  color: #555;
+  font-weight: 500;
+}
+
+.status-item .value {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.milk-operations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.operation-section {
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+}
+
+.operation-section.receive {
+  border-color: #27ae60;
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.05), rgba(39, 174, 96, 0.1));
+}
+
+.operation-section.sell {
+  border-color: #e74c3c;
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(231, 76, 60, 0.1));
+}
+
+.operation-section h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.operation-section.receive h3 {
+  color: #27ae60;
+}
+
+.operation-section.sell h3 {
+  color: #e74c3c;
+}
+
+.operation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.btn-receive,
+.btn-sell {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-receive {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-receive:hover:not(:disabled) {
+  background: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.btn-sell {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-sell:hover:not(:disabled) {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.btn-receive:disabled,
+.btn-sell:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.operator-section {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.operator-section h3 {
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.operator-info p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.operator-info strong {
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .milk-tank-page {
+    padding: 1rem;
+  }
+  
+  .tank-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .date-section {
+    align-items: flex-start;
+  }
+  
+  .tank-visualization {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .tank {
+    width: 150px;
+    height: 250px;
+  }
+  
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .milk-operations {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
