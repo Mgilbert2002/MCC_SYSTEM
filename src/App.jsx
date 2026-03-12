@@ -5,6 +5,7 @@ import MilkTankPage from './MilkTankPage'
 import SalesPage from './SalesPage'
 import CommunicationPage from './CommunicationPage'
 import OperatorPage from './OperatorPage'
+import DeliveryDetailsPage from './DeliveryDetailsPage'
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/sales" element={<SalesPage />} />
           <Route path="/communication" element={<CommunicationPage />} />
           <Route path="/operator" element={<OperatorPage />} />
+          <Route path="/delivery-details" element={<DeliveryDetailsPage />} />
         </Routes>
       </main>
 

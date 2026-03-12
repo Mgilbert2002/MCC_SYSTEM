@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './HomePage.css'
 
 function HomePage() {
   const [activeModule, setActiveModule] = useState('reception')
   const [showNewDelivery, setShowNewDelivery] = useState(false)
+  const navigate = useNavigate()
 
   const handleNewDelivery = () => {
     setShowNewDelivery(true)
@@ -11,6 +13,10 @@ function HomePage() {
 
   const handleCloseDelivery = () => {
     setShowNewDelivery(false)
+  }
+
+  const handleNextDelivery = () => {
+    navigate('/delivery-details')
   }
 
   return (
@@ -131,7 +137,7 @@ function HomePage() {
               
               <div className="delivery-actions">
                 <button className="btn-cancel" onClick={handleCloseDelivery}>Cancel</button>
-                <button className="btn-next">Next &gt;&gt;</button>
+                <button className="btn-next" onClick={handleNextDelivery}>Next &gt;&gt;</button>
               </div>
             </div>
           </div>
